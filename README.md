@@ -47,4 +47,4 @@ I learned a lot about how to create a responsive grid layout with the use of aut
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/exiviuz)
+- Frontend Mentor - (ExiviuZ)[https://www.frontendmentor.io/profile/exiviuz]
