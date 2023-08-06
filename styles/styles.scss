@@ -55,6 +55,7 @@ html {
 }
 
 body {
+    background-color: $neut-Off-white;
     padding: clamp(1rem, -0.4085rem + 6.0094vw, 5rem);
     display: grid;
     gap: 3rem;

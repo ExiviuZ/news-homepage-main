@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  background-color: hsl(36, 100%, 99%);
   padding: clamp(1rem, -0.4085rem + 6.0094vw, 5rem);
   display: grid;
   gap: 3rem;
