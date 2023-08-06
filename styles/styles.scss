@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+$Soft-orange: hsl(35, 77%, 62%);
+$Soft-red: hsl(5, 85%, 63%);
+
+// ### Neutral
+
+$neut-Off-white: hsl(36, 100%, 99%);
+$neut-Grayishblue: hsl(233, 8%, 79%);
+$neut-Dark-grayish-blue: hsl(236, 13%, 42%);
+$neut-Very-dark-blue: hsl(240, 100%, 5%);
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size (paragraph): 15px
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    padding: clamp(1rem, -0.4085rem + 6.0094vw, 5rem);
+    display: grid;
+    gap: 3rem;
+    line-height: 1;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.5;
+    color: $neut-Dark-grayish-blue;
+    font-size: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+    }
+
+    .nav-links {
+        list-style-type: none;
+        display: flex;
+        gap: 2rem;
+        .close {
+            display: none;
+        }
+        a {
+            text-decoration: none;
+            color: $neut-Dark-grayish-blue;
+            transition: color 0.25s ease-in-out;
+            &:hover {
+                color: $Soft-red;
+            }
+        }
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+.grid-container {
+    display: grid;
+    gap: 3rem;
+}
+
+.grid-container > .wrap {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+    > div:nth-child(1) {
+        display: grid;
+        gap: 2rem;
+        article {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            h1 {
+                font-size: clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+            }
+            div {
+                gap: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            button {
+                cursor: pointer;
+                align-self: flex-start;
+                border: none;
+                background-color: $Soft-red;
+                padding: 1rem 2rem;
+                color: $neut-Off-white;
+                letter-spacing: 4px;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                transition: background-color 0.25s ease-in-out;
+                &:hover {
+                    background-color: $neut-Very-dark-blue;
+                }
+            }
+        }
+    }
+    > div:nth-child(2) {
+        color: white;
+        background-color: $neut-Very-dark-blue;
+        padding: clamp(1.25rem, 0.9859rem + 1.1268vw, 2rem) clamp(0.75rem, 0.662rem + 0.3756vw, 1rem);
+        article:not(:last-child) {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $neut-Dark-grayish-blue;
+        }
+        h2 {
+            margin-bottom: 0.5em;
+            font-size: clamp(1.75rem, 1.4859rem + 1.1268vw, 2.5rem);
+            color: $Soft-orange;
+        }
+        h3 {
+            margin-block: 2rem;
+            transition: color 0.25s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                color: $Soft-orange;
+            }
+        }
+        p {
+            color: $neut-Grayishblue;
+        }
+    }
+}
+
+.grid-container > div:nth-child(2) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    article {
+        display: flex;
+        gap: 1rem;
+        > *:nth-child(1) {
+            width: 25%;
+        }
+        > *:nth-child(2) {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            h4 {
+                transition: color 0.25s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                    color: $Soft-red;
+                }
+            }
+            span {
+                font-size: 1.75rem;
+                color: $neut-Grayishblue;
+            }
+        }
+    }
+}
+
+.light {
+    font-weight: 400;
+}
+
+.medium {
+    font-weight: 700;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+@media (max-width: 767px) {
+    nav {
+        .nav-links {
+            transition: transform 0.25s ease-in-out;
+            transform: translateX(100%);
+            background-color: white;
+            position: fixed;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            width: 300px;
+            max-width: 70%;
+            flex-direction: column;
+            padding-left: 2rem;
+            padding-top: 10rem;
+            &.active::before {
+                display: block;
+            }
+            &::before {
+                display: none;
+                content: "";
+                width: 400%;
+                height: 100%;
+                position: absolute;
+                right: 100%;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            &.active {
+                transform: translateX(0);
+            }
+            .close {
+                cursor: pointer;
+                display: inline;
+                position: absolute;
+                background: transparent;
+                border: none;
+                right: 25px;
+                top: 25px;
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .burger {
+            cursor: pointer;
+            display: block;
+            background-color: transparent;
+            border: none;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .grid-container > .wrap {
+        gap: 3rem;
+        grid-template-columns: 1fr;
+    }
+}
